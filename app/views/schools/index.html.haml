@@ -1,0 +1,17 @@
+%h1 Listado de Escuelas
+
+- if flash[:notice].present?
+  .notice
+    =flash[:notice]
+
+%table
+  %tr
+    %th
+      Nombre Escuela
+    %th
+      Ciudad
+  = render @school
+
+%h1
+  = link_to "Agregar nueva escuela", new_school_path
+  = link_to "Home", root_path

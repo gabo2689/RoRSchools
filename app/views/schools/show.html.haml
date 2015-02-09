@@ -1,0 +1,22 @@
+%h1 Escuela Seleccionada
+
+%p
+  %strong
+    Escuela:
+    = @school.name
+%p
+  %strong
+    Direccion:
+    = @school.address
+%p
+  %strong
+    Ciudad:
+    = @school.city
+
+
+%ul
+  %li
+    = link_to "Editar", edit_school_path(@school)
+  %li
+    = link_to "Eliminar", @school, method: :delete, data:{confirm:'Esta seguro de eliminar la escuela'}
+

@@ -1,0 +1,20 @@
+= form_for @school do |s|
+  %p
+    = s.label :name
+    %br
+      = s.text_field :name
+
+  %p
+    = s.label :address
+    %br
+      = s.text_field :address
+
+  %p
+    = s.label :city
+    %br
+      = s.text_field :city
+
+
+  %p
+    = s.submit
+    = link_to 'Listado de Escuelas', schools_path
