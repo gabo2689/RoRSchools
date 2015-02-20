@@ -1,0 +1,19 @@
+%h1= @grade.name
+%p
+  %strong Name
+  = @grade.name
+%p
+  %strong Teacher
+  = @grade.name_teacher
+%p
+  %strong Maximun Students
+  = @grade.maximun_students
+
+%br
+
+= render partial: "subjects", locals: { subjects: @grade.subjects }
+
+%p= link_to "New Subject", new_grade_subject_path(@grade)
+//%p= link_to "Edit `Grade", subjects_batch_grade_path(@grade)
+
+

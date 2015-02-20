@@ -1,0 +1,23 @@
+
+= render partial: "shared/print_errors", locals: {obj: @student}
+
+= form_for @student do |f|
+
+  .field
+    = f.label :name, "Name"
+    = f.text_field :name
+
+  .field
+    = f.label :email, "email"
+    = f.email_field :email
+
+  .field
+    = f.label :gender, "Gender"
+    = f.select :gender, Student.gender_available_for_select #gender_available_for_select
+      
+  .field
+    = f.label :graduate, "Graduate"
+    = f.check_box  :graduate
+  
+  .field
+    = f.submit

@@ -1,0 +1,20 @@
+%h1 List of Grades
+
+- if flash[:notice].present?
+  .notice= flash[:notice]
+
+- if @grades.any?
+  %table{border: "1"}
+    %tr
+      %th Id
+      %th Name
+      %th Teacher
+      %th Crated
+    = render @grades
+- else
+  %em There is no grade
+
+%br
+
+= link_to "New grade", new_grade_path
+

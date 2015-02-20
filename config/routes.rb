@@ -1,11 +1,18 @@
 GhostAcademy::Application.routes.draw do
+  get "students/index"
+  get "subjects/new"
+  get "grades/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
-   resources :schools
-   resources :grades
+   resources :grades, :except => [:destroy] do
+     resources :subjects , :only => [:new, :create, :destroy,:show]
+     get "subjects_batch", on: :member
+   end
+
+   resources :students, :except => [:destroy] 
    #resources :sections
 
   # Example of regular route:

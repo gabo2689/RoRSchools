@@ -11,32 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209182231) do
+ActiveRecord::Schema.define(version: 20150220194210) do
 
   create_table "grades", force: true do |t|
     t.string   "name"
-    t.integer  "school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_teacher"
+    t.integer  "maximun_students"
   end
 
-  add_index "grades", ["school_id"], name: "index_grades_on_school_id"
-
-  create_table "schools", force: true do |t|
+  create_table "students", force: true do |t|
     t.string   "name"
-    t.string   "address"
-    t.string   "city"
+    t.string   "email"
+    t.string   "gender"
+    t.decimal  "final_score_average"
+    t.boolean  "graduate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "sections", force: true do |t|
+  create_table "subjects", force: true do |t|
     t.string   "name"
     t.integer  "grade_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sections", ["grade_id"], name: "index_sections_on_grade_id"
+  add_index "subjects", ["grade_id"], name: "index_subjects_on_grade_id"
 
 end

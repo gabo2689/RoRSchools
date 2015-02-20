@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 #Gem for Haml
 gem 'haml'
 
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

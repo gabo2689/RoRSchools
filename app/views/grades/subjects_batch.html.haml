@@ -1,0 +1,9 @@
+
+= form_for @grade do |f|
+  %table{border: "1"}
+    %tr
+      %th Nombre
+    = f.fields_for :subjects do |fgrade|
+      %tr
+        %td= fgrade.text_field :name
+  = f.submit

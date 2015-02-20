@@ -1,0 +1,17 @@
+= render partial: "shared/print_errors", locals: { obj: @grade }
+
+= form_for @grade do |f|
+  .field
+    = f.label :name, "Name"
+    = f.text_field :name
+
+  .field
+    = f.label :name_teacher, "Teacher"
+    = f.text_field :name_teacher
+
+  .field
+    = f.label :maximun_students, "Maximun Students"
+    = f.text_field :maximun_students
+
+  .field
+    = f.submit

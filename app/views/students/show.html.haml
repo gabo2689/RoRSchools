@@ -1,0 +1,19 @@
+%h1= @student.name
+%p
+  %strong Name
+  = @student.name
+%p
+  %strong Email
+  = @student.email
+%p
+  %strong Gender
+  = @student.gender
+  %p
+  %strong Final Score Average
+  = @student.final_score_average
+  %p
+  %strong graduate
+  = @student.graduate
+%br
+%br
+= link_to "Edit Student", edit_student_path
