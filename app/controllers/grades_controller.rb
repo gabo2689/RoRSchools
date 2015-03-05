@@ -1,6 +1,6 @@
 class GradesController < ApplicationController
    def index
-    @grades = Grade.order(:created_at)
+    @grades = Grade.order(created_at: :desc)
   end
 
   def new
@@ -8,13 +8,13 @@ class GradesController < ApplicationController
   end
 
  def create
-    @grade = Client.new(grade_params)
+    @grade = Grade.new(grade_params)
 
     if @grade.save
       redirect_to grades_path, 
         flash: {notice: "Grade created successfully!"}
     else
-      grade :new
+      render :new
     end
  end
 

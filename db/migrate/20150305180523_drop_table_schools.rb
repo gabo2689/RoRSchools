@@ -3,4 +3,3 @@ class DropTableSchools < ActiveRecord::Migration
   	drop_table :schools
   end
 end
-ols

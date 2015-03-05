@@ -1,12 +1,14 @@
 = render partial: "shared/print_errors", locals: { obj: @subject}
 
-%p Enter the data in the new song
+%p 
 
 = form_for [@grade, @subject] do |f|
 
   .field
     = f.label :name, "Name Subject"
     = f.text_field :name
-
+  .field
+    = f.label :teacher
+    = f.text_field :teacher
   .field
     = f.submit

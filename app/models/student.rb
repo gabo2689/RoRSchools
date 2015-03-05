@@ -5,4 +5,16 @@ class Student < ActiveRecord::Base
 	def self.gender_available_for_select
       ["Male", "Female"]
     end 
+
+
+around_create :ZeroToFinalScoreAndFalseGraduate
+
+private
+def ZeroToFinalScoreAndFalseGraduate 
+	self.final_score_average = 0
+	self.graduate = 0
+	yield
+end
+
+
 end
